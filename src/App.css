@@ -1,0 +1,72 @@
+body {
+  background-color: antiquewhite;
+  font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.SideNav {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 50px;
+}
+
+.SideNav span {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.SideNav span:hover {
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+.EditPanel {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  width: 70%;
+  height: 100%;
+}
+
+.EditContainer {
+  margin: 50px auto;
+  padding: 2.54cm;
+  width: 210mm; /* A4 width */
+  height: 297mm; /* A4 height */
+  background-color: white;
+  font-size: 15px;
+}
+
+.CVHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.FullName {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.JobTitle {
+  font-size: 20px;
+}
+
+.Contacts {
+  text-align: right;
+}
+
+.Contact {
+  display: block;
+  margin-bottom: 10px;
+}

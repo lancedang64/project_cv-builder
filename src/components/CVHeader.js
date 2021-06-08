@@ -14,7 +14,7 @@ function CVHeader(props) {
   return (
     <div className="CVHeader">
       <div className="NameAndTitle">
-        <span onClick={enableEditMode} className="FullName">
+        <span onClick={enableEditMode} className="fullName">
           {name}
         </span>
         <br />

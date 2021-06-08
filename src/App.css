@@ -40,13 +40,17 @@ body {
   font-size: 15px;
 }
 
+input.fullName {
+  width: 450px;
+}
+
 .CVHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.FullName {
+.fullName {
   display: inline-block;
   font-size: 40px;
   font-weight: bold;

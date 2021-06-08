@@ -4,11 +4,9 @@ import SideNav from './components/SideNav';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <SideNav />
-      <div className="EditPanel">
-        <EditContainer />
-      </div>
+      <EditContainer />
     </div>
   );
 }

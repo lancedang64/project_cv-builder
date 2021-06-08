@@ -28,15 +28,10 @@ body {
   cursor: pointer;
 }
 
-.EditPanel {
-  position: fixed;
-  top: 0;
-  left: 250px;
-  width: 70%;
-  height: 100%;
-}
-
 .EditContainer {
+  position: fixed;
+  top: 10px;
+  left: 300px;
   margin: 50px auto;
   padding: 2.54cm;
   width: 210mm; /* A4 width */

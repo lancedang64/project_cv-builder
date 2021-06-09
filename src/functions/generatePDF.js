@@ -2,6 +2,8 @@ import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
 function generatePDF() {
+  console.log('generate PDF!');
+
   const input = document.getElementById('EditContainer');
 
   html2canvas(input).then((canvas) => {

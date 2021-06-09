@@ -1,24 +1,32 @@
 import React from 'react';
-import enableEditMode from '../functions/toggleEditMode';
+import TextField from './TextField';
 
 function CVHeader(props) {
-  const { name, jobTitle, contacts } = props.person;
+  const { fullName, jobTitle, contacts } = props.person;
   const allContacts = contacts.map((contact) => {
     return (
-      <span key={contact.toString()} className="Contact">
-        {contact}
-      </span>
+      <TextField
+        key={contact.toString()}
+        className="Contact"
+        template={contact}
+        placeholder="Contact Detail"
+      />
     );
   });
 
   return (
     <div className="CVHeader">
-      <div className="NameAndTitle">
-        <span onClick={enableEditMode} className="fullName">
-          {name}
-        </span>
-        <br />
-        <span className="JobTitle">{jobTitle}</span>
+      <div>
+        <TextField
+          className="FullName"
+          template={fullName}
+          placeholder="Full Name"
+        />
+        <TextField
+          className="JobTitle"
+          template={jobTitle}
+          placeholder="Job Title"
+        />
       </div>
       <div className="Contacts">{allContacts}</div>
     </div>

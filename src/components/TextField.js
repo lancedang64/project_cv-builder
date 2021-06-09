@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function TextField(props) {
   const emptyInputPrompt = 'Please fill in this field';
   const [isEditing, setEditMode] = useState(false);
-  const [inputValue, setInputValue] = useState(props.template);
+  const [value, setValue] = useState(props.template);
 
   function enableEditMode(event) {
     setEditMode(true);
@@ -13,20 +13,27 @@ function TextField(props) {
     setEditMode(false);
   }
 
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') setEditMode(false);
+  }
+
   function handleChange(event) {
-    setInputValue(event.target.value);
+    setValue(event.target.value);
   }
 
   return isEditing ? (
     <input
+      autoFocus
       className={props.className}
-      value={inputValue}
+      value={value}
       onChange={handleChange}
       onBlur={disableEditMode}
+      onKeyPress={handleKeyPress}
+      placeholder={props.placeholder}
     />
   ) : (
     <span className={props.className} onClick={enableEditMode}>
-      {inputValue || emptyInputPrompt}
+      {value || props.placeholder}
     </span>
   );
 }

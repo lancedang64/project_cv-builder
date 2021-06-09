@@ -40,7 +40,7 @@ body {
   font-size: 15px;
 }
 
-input.fullName {
+input.FullName {
   width: 450px;
 }
 
@@ -50,8 +50,8 @@ input.fullName {
   justify-content: space-between;
 }
 
-.fullName {
-  display: inline-block;
+.FullName {
+  display: block;
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 10px;

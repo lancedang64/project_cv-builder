@@ -1,5 +1,5 @@
 const TEMPLATE = {
-  name: 'John Smith',
+  fullName: 'John Smith',
   jobTitle: 'Software Developer',
   contacts: [
     'Sydney, Australia',

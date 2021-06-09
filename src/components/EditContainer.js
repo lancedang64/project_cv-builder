@@ -8,7 +8,6 @@ function EditContainer() {
   return (
     <div className="EditContainer">
       <CVHeader person={TEMPLATE} />
-      <TextField className="fullName" template="John Smith" />
       <CVSection />
     </div>
   );

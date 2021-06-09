@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function TextField(props) {
-  const emptyInputPrompt = 'Please fill in this field';
   const [isEditing, setEditMode] = useState(false);
   const [value, setValue] = useState(props.template);
 
@@ -32,7 +31,7 @@ function TextField(props) {
       placeholder={props.placeholder}
     />
   ) : (
-    <span className={props.className} onClick={enableEditMode}>
+    <span id={props.id} className={props.className} onClick={enableEditMode}>
       {value || props.placeholder}
     </span>
   );

@@ -15,9 +15,10 @@ function CVHeader(props) {
   });
 
   return (
-    <div className="CVHeader">
+    <div className="CVHeader" id="CVHeader">
       <div>
         <TextField
+          id="FullName"
           className="FullName"
           template={fullName}
           placeholder="Full Name"

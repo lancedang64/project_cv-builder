@@ -1,7 +1,7 @@
 import React from 'react';
 
 function SideNavSpan(props) {
-  return <span>{props.name}</span>;
+  return <span onClick={props.onClick}>{props.name}</span>;
 }
 
 export default SideNavSpan;

@@ -49,15 +49,6 @@ body {
 
 /* height: 297mm; A4 height */
 
-input.FullName {
-  width: 450px;
-}
-
-input.Contact {
-  width: 250px;
-  text-align: right;
-}
-
 .CVHeader {
   display: flex;
   flex-direction: row;
@@ -82,4 +73,13 @@ input.Contact {
 .Contact {
   display: block;
   margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 300px;
 }

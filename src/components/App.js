@@ -22,9 +22,17 @@ function App() {
   };
 
   function handleOnChange(event) {
-    const name = event.target.name;
-    const updatedState = event.target.value;
     setPersonData((prevState) => {
+      const name = event.target.name;
+      let updatedState;
+      if (name === 'contacts') {
+        updatedState = prevState.contacts.map((contact, index) => {
+          if (event.target.id === `contact${index}`)
+            contact = event.target.value;
+          return contact;
+        });
+      } else updatedState = event.target.value;
+
       return {
         ...prevState,
         [name]: updatedState,

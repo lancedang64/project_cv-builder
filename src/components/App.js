@@ -1,12 +1,13 @@
 import '../styles/App.css';
 import React, { useState } from 'react';
-import EditContainer from './EditMode/EditContainer';
+import FormContainer from './FormMode/FormContainer';
 import SideNav from './SideNav';
 import PreviewContainer from './PreviewMode/PreviewContainer';
 import TEMPLATE from '../TEMPLATE';
 
 function App() {
   const [isEditMode, setEditMode] = useState(true);
+  const [personData, setPersonData] = useState(TEMPLATE);
 
   const sideNavFunctions = {
     Preview: function togglePreviewMode() {
@@ -20,13 +21,27 @@ function App() {
     },
   };
 
+  function handleOnChange(event) {
+    const name = event.target.name;
+    const updatedState = event.target.value;
+    setPersonData((prevState) => {
+      return {
+        ...prevState,
+        [name]: updatedState,
+      };
+    });
+  }
+
   return (
     <div className="App">
       <SideNav functions={sideNavFunctions} />
       {isEditMode ? (
-        <EditContainer person={TEMPLATE} />
+        <FormContainer
+          personData={personData}
+          handleOnChange={handleOnChange}
+        />
       ) : (
-        <PreviewContainer person={TEMPLATE} />
+        <PreviewContainer personData={personData} />
       )}
     </div>
   );

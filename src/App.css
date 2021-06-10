@@ -1,14 +1,25 @@
+html,
+body,
+#root,
+iframe,
+.App {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: antiquewhite;
   font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
+.App {
+  display: flex;
+}
+
 .SideNav {
   width: 250px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   background-color: #111;
   overflow-x: hidden;
   padding-top: 50px;
@@ -32,10 +43,11 @@ body {
   margin: 50px auto;
   padding: 2.54cm;
   width: 210mm; /* A4 width */
-  height: 297mm; /* A4 height */
   background-color: white;
   font-size: 15px;
 }
+
+/* height: 297mm; A4 height */
 
 input.FullName {
   width: 450px;

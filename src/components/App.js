@@ -1,15 +1,16 @@
-import './App.css';
+import '../styles/App.css';
 import React, { useState } from 'react';
-import EditContainer from './components/EditContainer';
-import SideNav from './components/SideNav';
-import PreviewContainer from './components/PreviewMode/PreviewContainer';
+import EditContainer from './EditMode/EditContainer';
+import SideNav from './SideNav';
+import PreviewContainer from './PreviewMode/PreviewContainer';
+import TEMPLATE from '../TEMPLATE';
 
 function App() {
-  const [isPreviewMode, setPreviewMode] = useState(false);
+  const [isEditMode, setEditMode] = useState(true);
 
   const sideNavFunctions = {
     Preview: function togglePreviewMode() {
-      setPreviewMode((prevState) => !prevState);
+      setEditMode((prevState) => !prevState);
     },
     'Download PDF': function downloadPDF() {
       console.log('download PDF');
@@ -22,7 +23,11 @@ function App() {
   return (
     <div className="App">
       <SideNav functions={sideNavFunctions} />
-      {isPreviewMode ? <PreviewContainer /> : <EditContainer />}
+      {isEditMode ? (
+        <EditContainer person={TEMPLATE} />
+      ) : (
+        <PreviewContainer person={TEMPLATE} />
+      )}
     </div>
   );
 }

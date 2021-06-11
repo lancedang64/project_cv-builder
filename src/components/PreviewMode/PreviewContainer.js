@@ -7,9 +7,9 @@ import styles from '../../styles/CVHeaderStyles';
 function MyDocument(props) {
   const { fullName, jobTitle, contacts } = props.personData;
 
-  const contactTexts = contacts.map((contact) => {
+  const contactTexts = contacts.map((contact, index) => {
     return (
-      <Text key={contact} style={styles.contact}>
+      <Text key={index} style={styles.contact}>
         {contact}
       </Text>
     );

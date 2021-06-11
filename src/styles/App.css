@@ -49,34 +49,7 @@ body {
 
 /* height: 297mm; A4 height */
 
-.CVHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.FullName {
-  display: block;
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.JobTitle {
-  font-size: 20px;
-}
-
-.Contacts {
-  text-align: right;
-}
-
-.Contact {
-  display: block;
-  margin-bottom: 10px;
-}
-
 label {
-  display: block;
   margin-bottom: 10px;
 }
 

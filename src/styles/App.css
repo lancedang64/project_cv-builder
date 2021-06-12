@@ -3,56 +3,68 @@ body,
 #root,
 iframe,
 .App {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
 }
 
 body {
-  background-color: antiquewhite;
-  font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+	background-color: antiquewhite;
+	font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
 .App {
-  display: flex;
+	display: flex;
 }
 
 .SideNav {
-  width: 250px;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 50px;
+	width: 250px;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 150px;
 }
 
 .SideNav span {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  margin-bottom: 25px;
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	margin-bottom: 50px;
 }
 
 .SideNav span:hover {
-  color: #f1f1f1;
-  cursor: pointer;
+	color: #f1f1f1;
+	cursor: pointer;
 }
 
 .FormContainer {
-  margin: 50px auto;
-  padding: 2.54cm;
-  width: 210mm; /* A4 width */
-  background-color: white;
-  font-size: 15px;
+	padding: 2.54cm;
+	width: 80%;
+	background-color: white;
+	font-size: 15px;
+	overflow: scroll;
 }
 
-/* height: 297mm; A4 height */
+.inputDiv {
+	width: 28%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
 
 label {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 input {
-  width: 300px;
+	width: 300px;
+}
+
+textarea {
+	display: block;
+	width: 70%;
+	height: 100px;
+	margin-top: 7px;
 }

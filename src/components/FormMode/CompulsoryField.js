@@ -1,18 +1,22 @@
 import React from 'react';
 
 function CompulsoryField(props) {
-  return (
-    <div>
-      <label>{props.label} </label>
-      <input
-        id={props.id}
-        name={props.name}
-        value={props.value}
-        onChange={props.handleOnChange}
-        placeholder={props.placeholder}
-      />
-    </div>
-  );
+	const { type, label, id, name, value, handleOnChange } = props;
+
+	if (type === 'textArea') {
+		return (
+			<div>
+				{label ? <label>{label}: </label> : null}
+				<textarea id={id} name={name} value={value} onChange={handleOnChange} />
+			</div>
+		);
+	}
+	return (
+		<div className='inputDiv'>
+			<label>{label}: </label>
+			<input id={id} name={name} value={value} onChange={handleOnChange} />
+		</div>
+	);
 }
 
 export default CompulsoryField;

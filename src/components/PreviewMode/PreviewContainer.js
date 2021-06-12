@@ -1,11 +1,11 @@
 import React from 'react';
 import { Page, Text, View, Document } from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
-import styles from '../../styles/CVHeaderStyles';
+import styles from '../../styles/PDFStyles';
 
 // Create Document Component
 function MyDocument(props) {
-  const { fullName, jobTitle, contacts } = props.personData;
+  const { fullName, jobTitle, contacts, profile } = props.personData;
 
   const contactTexts = contacts.map((contact, index) => {
     return (
@@ -25,6 +25,10 @@ function MyDocument(props) {
               <Text style={styles.jobTitle}>{jobTitle}</Text>
             </View>
             <View style={styles.contacts}>{contactTexts}</View>
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.heading}>Profile</Text>
+            <Text>{profile}</Text>
           </View>
         </Page>
       </Document>

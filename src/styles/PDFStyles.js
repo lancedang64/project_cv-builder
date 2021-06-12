@@ -6,7 +6,9 @@ export default StyleSheet.create({
     backgroundColor: '#E4E4E4',
     fontSize: '11pt',
   },
-  CVHeader: {},
+  CVHeader: {
+    marginBottom: '40',
+  },
   fullName: {
     fontSize: '30pt',
   },
@@ -19,5 +21,9 @@ export default StyleSheet.create({
   },
   contact: {
     marginBottom: '5px',
+  },
+  section: {},
+  heading: {
+    fontSize: '13pt',
   },
 });

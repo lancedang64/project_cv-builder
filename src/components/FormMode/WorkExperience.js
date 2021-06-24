@@ -2,9 +2,12 @@ import React from 'react';
 import CompulsoryField from './CompulsoryField';
 
 function WorkExperience(props) {
-	const { workExpData, handleOnChange } = props;
+	const { index, workExpData, handleOnChange } = props;
 	return (
-		<div>
+		<div className='WorkExperience'>
+			<h3>
+				Job #{index + 1} {index === 0 ? '(Your most recent job)' : null}
+			</h3>
 			<CompulsoryField
 				label='Start Date'
 				name='startDate'
@@ -29,13 +32,19 @@ function WorkExperience(props) {
 				value={workExpData.company}
 				handleOnChange={handleOnChange}
 			/>
-			<CompulsoryField
-				type='textArea'
-				label='Description'
-				name='description'
-				value={workExpData.description}
-				handleOnChange={handleOnChange}
-			/>
+			{workExpData.description.map((task, index) => {
+				return (
+					<CompulsoryField
+						key={index}
+						type='textArea'
+						className='descriptionTask'
+						label={`Task ${index + 1}`}
+						name='description'
+						value={task}
+						handleOnChange={handleOnChange}
+					/>
+				);
+			})}
 		</div>
 	);
 }

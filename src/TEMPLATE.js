@@ -14,18 +14,26 @@ const TEMPLATE = {
 		{
 			startDate: '01/2020',
 			endDate: '06/2021',
-			position: 'Front-end developer',
+			position: 'Software Developer',
 			company: 'Abc def PTY LTD',
-			description:
-				'Curabitur et blandit ipsum. Proin suscipit tellus a mattis elementum. Suspendisse nunc orci, condimentum vitae pharetra luctus, faucibus a dolor. Nulla aliquam pellentesque justo ut pharetra. Donec bibendum mi sed porttitor accumsan. Donec ultrices cursus vulputate. Maecenas eget commodo sem.',
+			description: [
+				'Experimented with multiple iterations during design implementation.',
+				'Wrote extensible and maintainable code as part of a team.',
+				'Excelled in rapidly prototyping new capabilities to confirm project feasibility.',
+				'Designed web applications and maintained content for multiple .NET-based systems.',
+			],
 		},
 		{
 			startDate: '03/2019',
 			endDate: '01/2020',
 			position: 'Graduate developer',
 			company: 'DevOps Specialist PTY LTD',
-			description:
-				'Nunc et urna sollicitudin, blandit quam at, tempor dui. Curabitur commodo non sapien eget scelerisque. Duis vestibulum tellus mi, ac rhoncus elit pharetra quis. Phasellus in ante ac tellus malesuada imperdiet. Maecenas eleifend diam id leo blandit, sed congue orci euismod. Etiam maximus, elit et ultrices maximus, ligula lacus blandit risus, a dignissim mi risus id lorem. Curabitur porttitor laoreet enim et cursus.',
+			description: [
+				'Modified existing software to detect and correct errors, improve performance, and upgrade interfaces.',
+				'Consulted with clients regularly regarding projects, proposals, and technical issues that arise during the development process.',
+				'Prepared reports on specifications and activities for each project.',
+				'Collaborated well with other team members to determine the best design specifications and details.',
+			],
 		},
 	],
 };

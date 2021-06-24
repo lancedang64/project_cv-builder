@@ -24,6 +24,7 @@ function FormContainer(props) {
 		return (
 			<WorkExperience
 				key={index}
+				index={index}
 				workExpData={experience}
 				handleOnChange={props.handleOnChange}
 			/>
@@ -50,12 +51,13 @@ function FormContainer(props) {
 			<Section name='Profile'>
 				<CompulsoryField
 					type='textArea'
+					className='profile'
 					name='profile'
 					value={profile}
 					handleOnChange={props.handleOnChange}
 				/>
 			</Section>
-			<Section name='Work Experience' children={workExperienceFields} />
+			<Section name='Work Experiences' children={workExperienceFields} />
 		</form>
 	);
 }

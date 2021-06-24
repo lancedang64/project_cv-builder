@@ -48,7 +48,7 @@ body {
 }
 
 .inputDiv {
-	width: 28%;
+	width: 40%;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
@@ -62,9 +62,18 @@ input {
 	width: 300px;
 }
 
-textarea {
+.profile {
 	display: block;
 	width: 70%;
 	height: 100px;
 	margin-top: 7px;
+}
+
+.WorkExperience {
+	margin-bottom: 50px;
+}
+
+.descriptionTask {
+	display: inline-block;
+	width: 70%;
 }

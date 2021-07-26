@@ -1,52 +1,43 @@
+import { FieldArray, Field } from 'formik';
 import React from 'react';
-import CompulsoryField from './CompulsoryField';
 
-function WorkExperience(props) {
-	const { index, workExpData, handleOnChange } = props;
+const WorkExperience = ({ values }) => {
 	return (
-		<div className='WorkExperience'>
-			<h3>
-				Job #{index + 1} {index === 0 ? '(Your most recent job)' : null}
-			</h3>
-			<CompulsoryField
-				label='Start Date'
-				name='startDate'
-				value={workExpData.startDate}
-				handleOnChange={handleOnChange}
-			/>
-			<CompulsoryField
-				label='End Date'
-				name='endDate'
-				value={workExpData.endDate}
-				handleOnChange={handleOnChange}
-			/>
-			<CompulsoryField
-				label='Position'
-				name='position'
-				value={workExpData.position}
-				handleOnChange={handleOnChange}
-			/>
-			<CompulsoryField
-				label='Company'
-				name='company'
-				value={workExpData.company}
-				handleOnChange={handleOnChange}
-			/>
-			{workExpData.description.map((task, index) => {
-				return (
-					<CompulsoryField
-						key={index}
-						type='textArea'
-						className='descriptionTask'
-						label={`Task ${index + 1}`}
-						name='description'
-						value={task}
-						handleOnChange={handleOnChange}
-					/>
-				);
-			})}
-		</div>
+		<FieldArray
+			name='workExperience'
+			render={arrayHelpers => (
+				<div>
+					{values.friends && values.friends.length > 0 ? (
+						values.friends.map((friend, index) => (
+							<div key={index}>
+								<Field name={`friends.${index}`} />
+								<button
+									type='button'
+									onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
+								>
+									-
+								</button>
+								<button
+									type='button'
+									onClick={() => arrayHelpers.insert(index, '')} // insert an empty string at a position
+								>
+									+
+								</button>
+							</div>
+						))
+					) : (
+						<button type='button' onClick={() => arrayHelpers.push('')}>
+							{/* show this when user has removed all friends from the list */}
+							Add a friend
+						</button>
+					)}
+					<div>
+						<button type='submit'>Submit</button>
+					</div>
+				</div>
+			)}
+		/>
 	);
-}
+};
 
 export default WorkExperience;

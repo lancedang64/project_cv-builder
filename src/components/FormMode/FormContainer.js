@@ -1,65 +1,16 @@
 import React from 'react';
-import CompulsoryField from './CompulsoryField';
-import Section from './Section';
-import WorkExperience from './WorkExperience';
+import styled from 'styled-components';
 
-function FormContainer(props) {
-	const { fullName, jobTitle, contacts, profile, workExperience } =
-		props.personData;
+const StyledFormContainer = styled.div`
+	padding: 2.54cm;
+	width: 80%;
+	background-color: white;
+	font-size: 15px;
+	overflow: scroll;
+`;
 
-	const contactFields = contacts.map((contact, index) => {
-		return (
-			<CompulsoryField
-				key={index}
-				id={`contact${index}`}
-				label={`Contact #${index + 1}`}
-				name={`contacts`}
-				value={contact}
-				handleOnChange={props.handleOnChange}
-			/>
-		);
-	});
-
-	const workExperienceFields = workExperience.map((experience, index) => {
-		return (
-			<WorkExperience
-				key={index}
-				index={index}
-				workExpData={experience}
-				handleOnChange={props.handleOnChange}
-			/>
-		);
-	});
-
-	return (
-		<form className='FormContainer'>
-			<Section name='Info'>
-				<CompulsoryField
-					label='Full Name'
-					name='fullName'
-					value={fullName}
-					handleOnChange={props.handleOnChange}
-				/>
-				<CompulsoryField
-					label='Job Title'
-					name='jobTitle'
-					value={jobTitle}
-					handleOnChange={props.handleOnChange}
-				/>
-				{contactFields}
-			</Section>
-			<Section name='Profile'>
-				<CompulsoryField
-					type='textArea'
-					className='profile'
-					name='profile'
-					value={profile}
-					handleOnChange={props.handleOnChange}
-				/>
-			</Section>
-			<Section name='Work Experiences' children={workExperienceFields} />
-		</form>
-	);
-}
+const FormContainer = props => {
+	return <StyledFormContainer>{props.children}</StyledFormContainer>;
+};
 
 export default FormContainer;

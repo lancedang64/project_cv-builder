@@ -39,14 +39,6 @@ body {
 	cursor: pointer;
 }
 
-.FormContainer {
-	padding: 2.54cm;
-	width: 80%;
-	background-color: white;
-	font-size: 15px;
-	overflow: scroll;
-}
-
 .inputDiv {
 	width: 40%;
 	display: flex;

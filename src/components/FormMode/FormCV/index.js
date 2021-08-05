@@ -2,6 +2,9 @@ import React from 'react';
 import { Formik, Field, ErrorMessage, FieldArray } from 'formik';
 import { Form as AntForm, Input, Button, Radio } from 'antd';
 
+import validationSchema from './utils/validationSchema';
+import FormField from './components/FormField';
+
 const FormCV = props => {
 	const formikProps = {
 		initialValues: {
@@ -11,11 +14,9 @@ const FormCV = props => {
 			profile: '',
 			workExperience: [],
 		},
-		validationSchema: {},
+		validationSchema: validationSchema,
 		onSubmit: values => {
-			setTimeout(() => {
-				alert(JSON.stringify(values, null, 2));
-			}, 400);
+			console.log(JSON.stringify(values, null, 2));
 		},
 	};
 
@@ -39,16 +40,30 @@ const FormCV = props => {
 	return (
 		<Formik
 			{...formikProps}
-			render={({ values }) => (
+			render={({ values, errors, touched, handleChange, handleSubmit }) => (
 				<AntForm {...formItemLayout}>
-					<AntForm.Item label='Field A'>
-						<Input placeholder='input placeholder' />
-					</AntForm.Item>
-					<AntForm.Item label='Field B'>
-						<Input placeholder='input placeholder' />
-					</AntForm.Item>
+					<FormField
+						label='Full Name'
+						inputProps={{
+							name: 'fullName',
+							value: values.fullName,
+							handleChange: handleChange,
+						}}
+					/>
+
+					<FormField
+						label='Job Title'
+						inputProps={{
+							name: 'jobTitle',
+							value: values.jobTitle,
+							handleChange: handleChange,
+						}}
+					/>
+
 					<AntForm.Item {...buttonItemLayout}>
-						<Button type='primary'>Submit</Button>
+						<Button type='primary' onClick={handleSubmit}>
+							Submit
+						</Button>
 					</AntForm.Item>
 				</AntForm>
 			)}

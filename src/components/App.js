@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 
 import '../styles/App.css';
-import FormContainer from './FormMode/FormContainer';
+import FormContainer from './FormMode/FormContainer/';
 import SideNav from './SideNav';
 import PreviewContainer from './PreviewMode/PreviewContainer';
 import TEMPLATE from '../TEMPLATE';
-import FormCV from './FormMode/FormCV';
+import FormCV from './FormMode/FormCV/';
 
 function App() {
 	const [isEditMode, setEditMode] = useState(true);

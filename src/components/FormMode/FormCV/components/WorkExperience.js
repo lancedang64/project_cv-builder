@@ -15,6 +15,21 @@ export default function WorkExperience({ formControl, index, children }) {
 		<>
 			<h3>Work Experience #{index + 1}</h3>
 			{children}
+
+			<Controller
+				name={`workExperience[${index}].company`}
+				control={formControl}
+				defaultValue={''}
+				render={({ field }) => <TextInput label='Company' field={field} />}
+			/>
+
+			<Controller
+				name={`workExperience[${index}].position`}
+				control={formControl}
+				defaultValue={''}
+				render={({ field }) => <TextInput label='Position' field={field} />}
+			/>
+
 			<Controller
 				name={`workExperience[${index}].startDate`}
 				control={formControl}
@@ -26,18 +41,6 @@ export default function WorkExperience({ formControl, index, children }) {
 				control={formControl}
 				defaultValue={''}
 				render={({ field }) => <TextInput label='End date' field={field} />}
-			/>
-			<Controller
-				name={`workExperience[${index}].position`}
-				control={formControl}
-				defaultValue={''}
-				render={({ field }) => <TextInput label='Position' field={field} />}
-			/>
-			<Controller
-				name={`workExperience[${index}].company`}
-				control={formControl}
-				defaultValue={''}
-				render={({ field }) => <TextInput label='Company' field={field} />}
 			/>
 
 			<p>Tasks description (recommend: minimum 3)</p>

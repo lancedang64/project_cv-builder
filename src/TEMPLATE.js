@@ -36,6 +36,13 @@ const TEMPLATE = {
 			],
 		},
 	],
+	education: [
+		{
+			degree: 'Master of Science in Software Development',
+			school: 'Boston University',
+			yearOfGradution: '2002',
+		},
+	],
 };
 
 export default TEMPLATE;

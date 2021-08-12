@@ -2,9 +2,9 @@ import React from 'react';
 import { Controller, useFieldArray } from 'react-hook-form';
 import { Button } from 'antd';
 
-import TextInput from './TextInput';
+import TextInput from '../TextInput';
 
-export default function SkillList({ formControl }) {
+export default function SkillListSection({ formControl }) {
 	const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
 		{
 			control: formControl,

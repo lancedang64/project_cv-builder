@@ -28,7 +28,9 @@ function App() {
 		<div className='App'>
 			<SideNav functions={sideNavFunctions} />
 			{isEditMode ? (
-				<FormContainer children={<FormCV />} />
+				<FormContainer>
+					<FormCV />
+				</FormContainer>
 			) : (
 				<PreviewContainer personData={personData} />
 			)}

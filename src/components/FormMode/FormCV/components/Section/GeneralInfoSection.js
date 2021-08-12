@@ -1,10 +1,10 @@
 import React from 'react';
 import { Controller } from 'react-hook-form';
-import { defaultValues } from '../index';
+import { defaultValues } from '../../index';
 
-import TextInput from './TextInput';
+import TextInput from '../TextInput';
 
-export default function GeneralInfo({ formControl }) {
+export default function GeneralInfoSection({ formControl }) {
 	return (
 		<>
 			<h2>General Information</h2>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Form, Input, Button } from 'antd';
 import { Controller, useForm, useFieldArray } from 'react-hook-form';
-import TextInput from './components/TextInput';
-import GeneralInfo from './components/GeneralInfo';
-import SkillList from './components/SkillList';
+import GeneralInfoSection from './components/Section/GeneralInfoSection';
+import SkillListSection from './components/Section/SkillListSection';
+import WorkExperienceSection, {
+	workExperienceTemplate,
+} from './components/Section/WorkExperienceSection';
 
 export const defaultValues = {
 	fullName: '',
@@ -11,7 +13,7 @@ export const defaultValues = {
 	contacts: ['', '', '', '', ''],
 	skills: ['', '', ''],
 	profile: '',
-	workExperience: [],
+	workExperience: [workExperienceTemplate],
 };
 
 const formItemLayout = {
@@ -40,9 +42,11 @@ const FormCV = props => {
 
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)} {...formItemLayout}>
-			<GeneralInfo formControl={control} />
+			<GeneralInfoSection formControl={control} />
 
-			<SkillList formControl={control} />
+			<SkillListSection formControl={control} />
+
+			<WorkExperienceSection formControl={control} />
 
 			<Form.Item {...buttonItemLayout}>
 				<Button

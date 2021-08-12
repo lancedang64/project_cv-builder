@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const StyledFormContainer = styled.div`
 	padding: 2.54cm;
-	width: 80%;
+	width: 100%;
 	background-color: white;
 	font-size: 15px;
-	overflow: scroll;
+	overflow-y: scroll;
 `;
 
 const FormContainer = props => {

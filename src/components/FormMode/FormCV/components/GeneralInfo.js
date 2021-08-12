@@ -14,13 +14,11 @@ export default function GeneralInfo({ formControl }) {
 					control={formControl}
 					render={({ field }) => <TextInput label='Full Name' field={field} />}
 				/>
-
 				<Controller
 					name='jobTitle'
 					control={formControl}
 					render={({ field }) => <TextInput label='Job Title' field={field} />}
 				/>
-
 				<h3>Contacts (recommended: minimum 3)</h3>
 				{defaultValues.contacts.map((field, index) => (
 					<Controller
@@ -32,6 +30,14 @@ export default function GeneralInfo({ formControl }) {
 						)}
 					/>
 				))}
+				<p>Profile (recommended: minimum 50-80 words)</p>
+				<Controller
+					name='profile'
+					control={formControl}
+					render={({ field }) => (
+						<TextInput field={field} inputType='textArea' />
+					)}
+				/>
 			</div>
 		</>
 	);

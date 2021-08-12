@@ -3,11 +3,13 @@ import { Form, Input, Button } from 'antd';
 import { Controller, useForm, useFieldArray } from 'react-hook-form';
 import TextInput from './components/TextInput';
 import GeneralInfo from './components/GeneralInfo';
+import SkillList from './components/SkillList';
 
 export const defaultValues = {
 	fullName: '',
 	jobTitle: '',
 	contacts: ['', '', '', '', ''],
+	skills: ['', '', ''],
 	profile: '',
 	workExperience: [],
 };
@@ -30,7 +32,7 @@ const buttonItemLayout = {
 };
 
 const FormCV = props => {
-	const { handleSubmit, control, register, reset, watch, getValues } = useForm({
+	const { handleSubmit, control, register, getValues } = useForm({
 		defaultValues: defaultValues,
 	});
 
@@ -39,6 +41,8 @@ const FormCV = props => {
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)} {...formItemLayout}>
 			<GeneralInfo formControl={control} />
+
+			<SkillList formControl={control} />
 
 			<Form.Item {...buttonItemLayout}>
 				<Button

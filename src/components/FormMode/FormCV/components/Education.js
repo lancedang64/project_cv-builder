@@ -1,5 +1,5 @@
 import React from 'react';
-import { Controller, useFieldArray } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import TextInput from './TextInput';
 
 export default function Education({ formControl, index, children }) {

@@ -12,7 +12,7 @@ export const workExperienceTemplate = {
 	description: ['', '', ''],
 };
 
-export default function WorkExperienceSection({ formControl }) {
+export default function WorkExperienceFields({ formControl }) {
 	const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
 		{
 			control: formControl,

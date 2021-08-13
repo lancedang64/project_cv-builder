@@ -3,12 +3,12 @@ import { Controller } from 'react-hook-form';
 import { defaultValues } from '../../index';
 
 import TextInput from '../TextInput';
+import { DoubleRowContainerStyled } from '../../../../../styles/StyledComponents';
 
-export default function GeneralInfoSection({ formControl }) {
+export default function GeneralInfoFields({ formControl }) {
 	return (
-		<>
-			<h2>General Information</h2>
-			<div>
+		<div>
+			<DoubleRowContainerStyled>
 				<Controller
 					name='fullName'
 					control={formControl}
@@ -19,7 +19,10 @@ export default function GeneralInfoSection({ formControl }) {
 					control={formControl}
 					render={({ field }) => <TextInput label='Job Title' field={field} />}
 				/>
-				<h3>Contacts (recommended: minimum 3)</h3>
+			</DoubleRowContainerStyled>
+
+			<h3>Contacts (recommended: minimum 3)</h3>
+			<DoubleRowContainerStyled>
 				{defaultValues.contacts.map((field, index) => (
 					<Controller
 						key={index}
@@ -30,15 +33,13 @@ export default function GeneralInfoSection({ formControl }) {
 						)}
 					/>
 				))}
-				<p>Profile (recommended: minimum 50-80 words)</p>
-				<Controller
-					name='profile'
-					control={formControl}
-					render={({ field }) => (
-						<TextInput field={field} inputType='textArea' />
-					)}
-				/>
-			</div>
-		</>
+			</DoubleRowContainerStyled>
+			<p>Profile (recommended: minimum 50-80 words)</p>
+			<Controller
+				name='profile'
+				control={formControl}
+				render={({ field }) => <TextInput field={field} inputType='textArea' />}
+			/>
+		</div>
 	);
 }

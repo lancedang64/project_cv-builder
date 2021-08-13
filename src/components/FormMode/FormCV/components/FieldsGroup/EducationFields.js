@@ -10,7 +10,7 @@ export const educationTemplate = {
 	yearOfGraduation: '',
 };
 
-export default function EducationSection({ formControl }) {
+export default function EducationFields({ formControl }) {
 	const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
 		{
 			control: formControl,

@@ -1,17 +1,20 @@
 import React from 'react';
-import { Form, Input } from 'antd';
+import { Input } from 'antd';
 import TextArea from 'antd/lib/input/TextArea';
 
 export default function TextInput({ label, field, inputType, children }) {
 	return inputType === 'textArea' ? (
-		<>
+		<div>
 			<TextArea {...field} />
 			{children}
-		</>
+		</div>
 	) : (
-		<Form.Item label={label}>
-			<Input {...field} />
+		<div>
+			<label>
+				{label}:
+				<Input {...field} />
+			</label>
 			{children}
-		</Form.Item>
+		</div>
 	);
 }

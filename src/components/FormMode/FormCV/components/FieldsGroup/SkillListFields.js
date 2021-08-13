@@ -4,7 +4,7 @@ import { Button } from 'antd';
 
 import TextInput from '../TextInput';
 
-export default function SkillListSection({ formControl }) {
+export default function SkillListFields({ formControl }) {
 	const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
 		{
 			control: formControl,

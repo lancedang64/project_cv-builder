@@ -5,15 +5,12 @@ import { Button } from 'antd';
 import TextInput from '../TextInput';
 
 export default function SkillListFields({ formControl }) {
-	const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
-		{
-			control: formControl,
-			name: 'skills',
-		}
-	);
+	const { fields, append, remove } = useFieldArray({
+		control: formControl,
+		name: 'skills',
+	});
 	return (
 		<>
-			<h2>Skill List (recommended: minimum 3)</h2>
 			<div>
 				{fields.map((item, index) => (
 					<div key={item.id}>
@@ -25,6 +22,7 @@ export default function SkillListFields({ formControl }) {
 								<TextInput
 									label={`Skill #${index + 1}`}
 									field={field}
+									inputType='textArea'
 									children={
 										<Button type='button' onClick={() => remove(index)}>
 											Delete

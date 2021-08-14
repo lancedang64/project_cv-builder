@@ -19,7 +19,6 @@ export default function EducationFields({ formControl }) {
 	);
 	return (
 		<>
-			<h2>Education (recommended: minimum 1)</h2>
 			<div>
 				{fields.map((item, index) => (
 					<div key={item.id}>

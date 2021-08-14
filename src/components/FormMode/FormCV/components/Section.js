@@ -9,10 +9,11 @@ export const SectionStyled = styled.div`
 	padding: 30px;
 `;
 
-export default function Section({ name, children }) {
+export default function Section({ title, subtitle, children }) {
 	return (
 		<SectionStyled>
-			<h1>{name}</h1>
+			<h1>{title}</h1>
+			<h2>{subtitle}</h2>
 			{children}
 		</SectionStyled>
 	);

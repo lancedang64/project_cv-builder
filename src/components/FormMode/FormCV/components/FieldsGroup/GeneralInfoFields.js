@@ -34,11 +34,17 @@ export default function GeneralInfoFields({ formControl }) {
 					/>
 				))}
 			</DoubleRowContainerStyled>
-			<p>Profile (recommended: minimum 50-80 words)</p>
+
 			<Controller
 				name='profile'
 				control={formControl}
-				render={({ field }) => <TextInput field={field} inputType='textArea' />}
+				render={({ field }) => (
+					<TextInput
+						label='Profile (recommended: minimum 50-80 words)'
+						field={field}
+						inputType='textArea'
+					/>
+				)}
 			/>
 		</div>
 	);

@@ -47,19 +47,19 @@ const FormCV = props => {
 
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)} {...formItemLayout}>
-			<Section name='General Information'>
+			<Section title='General Information'>
 				<GeneralInfoFields formControl={control} />
 			</Section>
 
-			<Section name='Skill List' subtitle='(recommended: minimum 3)'>
+			<Section title='Skill List' subtitle='(recommended: minimum 3)'>
 				<SkillListFields formControl={control} />
 			</Section>
 
-			<Section name='Work Experience' subtitle='(recommended: minimum 2)'>
+			<Section title='Work Experience' subtitle='(recommended: minimum 2)'>
 				<WorkExperienceFields formControl={control} />
 			</Section>
 
-			<Section name='Education' subtitle='(recommended: minimum 1)'>
+			<Section title='Education' subtitle='(recommended: minimum 1)'>
 				<EducationFields formControl={control} />
 			</Section>
 

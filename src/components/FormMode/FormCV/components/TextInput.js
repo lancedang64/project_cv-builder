@@ -1,20 +1,26 @@
 import React from 'react';
 import { Input } from 'antd';
 import TextArea from 'antd/lib/input/TextArea';
+import styled from 'styled-components';
+
+const InputContainerStyled = styled.div`
+	margin-bottom: 20px;
+`;
 
 export default function TextInput({ label, field, inputType, children }) {
 	return inputType === 'textArea' ? (
-		<div>
-			<TextArea {...field} />
+		<InputContainerStyled>
+			{label ? `${label}:` : null}
+			<TextArea showCount autoSize={{ minRows: 2 }} {...field} />
 			{children}
-		</div>
+		</InputContainerStyled>
 	) : (
-		<div>
+		<InputContainerStyled>
 			<label>
 				{label}:
 				<Input {...field} />
 			</label>
 			{children}
-		</div>
+		</InputContainerStyled>
 	);
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Controller, useFieldArray } from 'react-hook-form';
+import { useFieldArray } from 'react-hook-form';
 import { Button } from 'antd';
 
 import WorkExperience from '../WorkExperience';
@@ -13,15 +13,12 @@ export const workExperienceTemplate = {
 };
 
 export default function WorkExperienceFields({ formControl }) {
-	const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
-		{
-			control: formControl,
-			name: 'workExperience',
-		}
-	);
+	const { fields, append, remove } = useFieldArray({
+		control: formControl,
+		name: 'workExperience',
+	});
 	return (
 		<>
-			<h2>Work Experience (recommended: minimum 2)</h2>
 			<div>
 				{fields.map((item, index) => (
 					<div key={item.id}>

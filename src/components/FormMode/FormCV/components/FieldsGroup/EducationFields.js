@@ -2,7 +2,7 @@ import React from 'react';
 import { Controller, useFieldArray } from 'react-hook-form';
 import { Button } from 'antd';
 
-import Education from '../Education';
+import Education from '../reusable/Education';
 
 export const educationTemplate = {
 	degree: '',

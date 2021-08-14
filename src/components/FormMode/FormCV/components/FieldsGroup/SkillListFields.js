@@ -2,7 +2,7 @@ import React from 'react';
 import { Controller, useFieldArray } from 'react-hook-form';
 import { Button } from 'antd';
 
-import TextInput from '../TextInput';
+import TextInput from '../reusable/TextInput';
 
 export default function SkillListFields({ formControl }) {
 	const { fields, append, remove } = useFieldArray({

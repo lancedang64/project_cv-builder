@@ -2,13 +2,13 @@ import React from 'react';
 import { Controller } from 'react-hook-form';
 import { defaultValues } from '../../index';
 
-import TextInput from '../TextInput';
-import { DoubleRowContainerStyled } from '../../../../../styles/StyledComponents';
+import TextInput from '../reusable/TextInput';
+import { DoubleRowContainerDiv } from '../../../../../styles/StyledComponents';
 
 export default function GeneralInfoFields({ formControl }) {
 	return (
 		<div>
-			<DoubleRowContainerStyled>
+			<DoubleRowContainerDiv>
 				<Controller
 					name='fullName'
 					control={formControl}
@@ -19,10 +19,10 @@ export default function GeneralInfoFields({ formControl }) {
 					control={formControl}
 					render={({ field }) => <TextInput label='Job Title' field={field} />}
 				/>
-			</DoubleRowContainerStyled>
+			</DoubleRowContainerDiv>
 
 			<h3>Contacts (recommended: minimum 3)</h3>
-			<DoubleRowContainerStyled>
+			<DoubleRowContainerDiv>
 				{defaultValues.contacts.map((field, index) => (
 					<Controller
 						key={index}
@@ -33,7 +33,7 @@ export default function GeneralInfoFields({ formControl }) {
 						)}
 					/>
 				))}
-			</DoubleRowContainerStyled>
+			</DoubleRowContainerDiv>
 
 			<Controller
 				name='profile'

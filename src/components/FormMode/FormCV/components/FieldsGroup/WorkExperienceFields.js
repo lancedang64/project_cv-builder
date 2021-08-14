@@ -1,8 +1,13 @@
 import React from 'react';
 import { useFieldArray } from 'react-hook-form';
 import { Button } from 'antd';
+import styled from 'styled-components';
 
-import WorkExperience from '../WorkExperience';
+import WorkExperience from '../reusable/WorkExperience';
+
+export const ButtonStyled = styled(Button)`
+	color: #1890ff;
+`;
 
 export const workExperienceTemplate = {
 	startDate: '',
@@ -25,10 +30,10 @@ export default function WorkExperienceFields({ formControl }) {
 						<WorkExperience
 							index={index}
 							formControl={formControl}
-							children={
-								<Button type='button' onClick={() => remove(index)}>
+							action={
+								<ButtonStyled type='text' onClick={() => remove(index)}>
 									Delete
-								</Button>
+								</ButtonStyled>
 							}
 						/>
 					</div>

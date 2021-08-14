@@ -9,7 +9,7 @@ import WorkExperienceFields, {
 import EducationFields, {
 	educationTemplate,
 } from './components/FieldsGroup/EducationFields';
-import Section from './components/Section';
+import Section from './components/reusable/Section';
 
 export const defaultValues = {
 	fullName: '',

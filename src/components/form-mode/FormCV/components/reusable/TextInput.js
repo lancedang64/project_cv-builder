@@ -17,7 +17,7 @@ export default function TextInput({ label, field, inputType, children }) {
 	) : (
 		<InputContainerStyled>
 			<label>
-				{label}:
+				{label ? `${label}:` : null}
 				<Input {...field} />
 			</label>
 			{children}

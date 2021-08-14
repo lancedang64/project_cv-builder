@@ -7,15 +7,9 @@ import TextInput from './TextInput';
 import DatePickerField from './DatePickerField';
 import {
 	DoubleRowContainerDiv,
+	FieldsGroupCardDiv,
 	TitleWithActionDiv,
 } from '../../../../../styles/custom-styled-components';
-
-const WorkExperienceDiv = styled.div`
-	border: solid 1px #717684;
-	box-shadow: 5px 10px #717684;
-	margin-bottom: 40px;
-	padding: 20px 20px;
-`;
 
 export default function WorkExperience({ formControl, index, action }) {
 	const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
@@ -26,7 +20,7 @@ export default function WorkExperience({ formControl, index, action }) {
 	);
 
 	return (
-		<WorkExperienceDiv>
+		<FieldsGroupCardDiv>
 			<TitleWithActionDiv>
 				<h3>Work Experience #{index + 1}</h3>
 				{action}
@@ -90,6 +84,6 @@ export default function WorkExperience({ formControl, index, action }) {
 			<Button type='secondary' onClick={() => append('')}>
 				Add description
 			</Button>
-		</WorkExperienceDiv>
+		</FieldsGroupCardDiv>
 	);
 }

@@ -12,3 +12,10 @@ export const TitleWithActionDiv = styled.div`
 	gap: 20px;
 	align-items: baseline;
 `;
+
+export const FieldsGroupCardDiv = styled.div`
+	border: solid 1px #717684;
+	box-shadow: 5px 10px #717684;
+	margin-bottom: 40px;
+	padding: 20px 20px;
+`;

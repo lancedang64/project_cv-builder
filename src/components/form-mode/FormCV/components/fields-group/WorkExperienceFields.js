@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import WorkExperience from '../reusable/WorkExperience';
 
-export const ButtonStyled = styled(Button)`
+const ButtonStyled = styled(Button)`
 	color: #1890ff;
 `;
 

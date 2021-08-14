@@ -1,8 +1,13 @@
 import React from 'react';
 import { Controller, useFieldArray } from 'react-hook-form';
 import { Button } from 'antd';
+import styled from 'styled-components';
 
 import Education from '../reusable/Education';
+
+const ButtonStyled = styled(Button)`
+	color: #1890ff;
+`;
 
 export const educationTemplate = {
 	degree: '',
@@ -25,18 +30,21 @@ export default function EducationFields({ formControl }) {
 						<Education
 							index={index}
 							formControl={formControl}
-							children={
-								<Button type='button' onClick={() => remove(index)}>
+							action={
+								<ButtonStyled type='text' onClick={() => remove(index)}>
 									Delete
-								</Button>
+								</ButtonStyled>
 							}
 						/>
 					</div>
 				))}
 
-				<Button type='secondary' onClick={() => append(educationTemplate)}>
+				<ButtonStyled
+					type='secondary'
+					onClick={() => append(educationTemplate)}
+				>
 					Add a degree
-				</Button>
+				</ButtonStyled>
 			</div>
 		</>
 	);

@@ -3,7 +3,7 @@ import { Controller } from 'react-hook-form';
 import { defaultValues } from '../../index';
 
 import TextInput from '../reusable/TextInput';
-import { DoubleRowContainerDiv } from '../../../../../styles/StyledComponents';
+import { DoubleRowContainerDiv } from '../../../../../styles/custom-styled-components';
 
 export default function GeneralInfoFields({ formControl }) {
 	return (

@@ -8,7 +8,7 @@ import DatePickerField from './DatePickerField';
 import {
 	DoubleRowContainerDiv,
 	TitleWithActionDiv,
-} from '../../../../../styles/StyledComponents';
+} from '../../../../../styles/custom-styled-components';
 
 const WorkExperienceDiv = styled.div`
 	border: solid 1px #717684;

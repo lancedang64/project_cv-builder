@@ -1,14 +1,14 @@
 import React from 'react';
 import { Form, Button } from 'antd';
 import { useForm } from 'react-hook-form';
-import GeneralInfoFields from './components/FieldsGroup/GeneralInfoFields';
-import SkillListFields from './components/FieldsGroup/SkillListFields';
+import GeneralInfoFields from './components/fields-group/GeneralInfoFields';
+import SkillListFields from './components/fields-group/SkillListFields';
 import WorkExperienceFields, {
 	workExperienceTemplate,
-} from './components/FieldsGroup/WorkExperienceFields';
+} from './components/fields-group/WorkExperienceFields';
 import EducationFields, {
 	educationTemplate,
-} from './components/FieldsGroup/EducationFields';
+} from './components/fields-group/EducationFields';
 import Section from './components/reusable/Section';
 
 export const defaultValues = {

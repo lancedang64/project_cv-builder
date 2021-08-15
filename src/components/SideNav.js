@@ -1,10 +1,32 @@
 import React from 'react';
-import templateData from '../templateData';
-import { defaultData } from './App';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import styled from 'styled-components';
 
+import templateData from '../templateData';
+import { defaultData } from './App';
 const MySwal = withReactContent(Swal);
+
+const SideNavStyled = styled.div`
+	width: 250px;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 150px;
+`;
+
+const SideNavSpan = styled.span`
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	margin-bottom: 50px;
+
+	&:hover {
+		color: #f1f1f1;
+		cursor: pointer;
+	}
+`;
 
 function SideNav(props) {
 	const handleReset = action => {
@@ -22,19 +44,21 @@ function SideNav(props) {
 	};
 
 	return (
-		<div className='SideNav'>
-			<span onClick={() => props.setEditMode(prev => !prev)}>
+		<SideNavStyled>
+			<SideNavSpan onClick={() => props.setEditMode(prev => !prev)}>
 				{props.isEditMode ? 'Preview' : 'Edit'}
-			</span>
+			</SideNavSpan>
 
-			<span onClick={() => console.log('download PDF')}>Download PDF</span>
+			<SideNavSpan onClick={() => console.log('download PDF')}>
+				Download PDF
+			</SideNavSpan>
 
-			<span onClick={() => handleReset('fillWithTemplate')}>
+			<SideNavSpan onClick={() => handleReset('fillWithTemplate')}>
 				Fill with template
-			</span>
+			</SideNavSpan>
 
-			<span onClick={() => handleReset('reset')}>Reset form</span>
-		</div>
+			<SideNavSpan onClick={() => handleReset('reset')}>Reset form</SideNavSpan>
+		</SideNavStyled>
 	);
 }
 

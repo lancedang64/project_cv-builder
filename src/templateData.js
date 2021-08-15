@@ -8,18 +8,18 @@ const templateData = {
 		'linkedin.com/in/john-doe-420/',
 		'github.com/john-doe',
 	],
+	profile:
+		'Seeking a Software Developer position where I can further develop my skills in web development. I am a recent graduate with a bachelor’s degree in Information Technology who is hard-working, detail-oriented and eager to learn. My career goal is to become a skilled full-time Software Developer who can add value to the products or services that my company provides.',
 	skills: [
 		'Superior development skills include OOD, Agile Development, Solutions Architecture, Project Management, and Technical Documentation.',
 		'Programming languages include C/C++/C#, ASP.NET, HTML5, VBScript, Java, JavaScript, T-SQL, JQuery, XML, PHP, Objective C and MySQL.',
 		'Exceptional ability to work in the following environments: Java Enterprise Edition, UNIX, Linux, and Windows.',
-		'-Strong decision maker, critical thinker, and creative designer with the ability to think around problems to unusual yet highly effective solutions.',
+		'Strong decision maker, critical thinker, and creative designer with the ability to think around problems to unusual yet highly effective solutions.',
 	],
-	profile:
-		'Seeking a Software Developer position where I can further develop my skills in web development. I am a recent graduate with a bachelor’s degree in Information Technology who is hard-working, detail-oriented and eager to learn. My career goal is to become a skilled full-time Software Developer who can add value to the products or services that my company provides.',
 	workExperience: [
 		{
 			startDate: '01/2020',
-			endDate: '06/2021',
+			endDate: 'Present',
 			position: 'Software Developer',
 			company: 'Abc def PTY LTD',
 			description: [
@@ -47,6 +47,11 @@ const templateData = {
 			degree: 'Master of Science in Software Development',
 			school: 'Boston University',
 			yearOfGraduation: '2002',
+		},
+		{
+			degree: 'Bachelor of Science in Software Development',
+			school: 'University of Chicago',
+			yearOfGraduation: '2000',
 		},
 	],
 };

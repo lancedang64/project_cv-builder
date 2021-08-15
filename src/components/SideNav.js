@@ -49,15 +49,23 @@ function SideNav(props) {
 				{props.isEditMode ? 'Preview' : 'Edit'}
 			</SideNavSpan>
 
-			<SideNavSpan onClick={() => console.log('download PDF')}>
-				Download PDF
-			</SideNavSpan>
+			{props.isEditMode ? null : (
+				<SideNavSpan onClick={() => console.log('download PDF')}>
+					Download PDF
+				</SideNavSpan>
+			)}
 
-			<SideNavSpan onClick={() => handleReset('fillWithTemplate')}>
-				Fill with template
-			</SideNavSpan>
+			{props.isEditMode ? (
+				<SideNavSpan onClick={() => handleReset('fillWithTemplate')}>
+					Fill with template
+				</SideNavSpan>
+			) : null}
 
-			<SideNavSpan onClick={() => handleReset('reset')}>Reset form</SideNavSpan>
+			{props.isEditMode ? (
+				<SideNavSpan onClick={() => handleReset('reset')}>
+					Reset form
+				</SideNavSpan>
+			) : null}
 		</SideNavStyled>
 	);
 }

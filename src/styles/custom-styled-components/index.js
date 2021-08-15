@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const DoubleRowContainerDiv = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 0 50px;
-	margin-bottom: 20px;
+	@media (min-width: 1024px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 0 50px;
+		margin-bottom: 20px;
+	}
 `;
 
 export const TitleWithActionDiv = styled.div`

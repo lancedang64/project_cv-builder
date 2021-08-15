@@ -6,9 +6,13 @@ export const SectionStyled = styled.div`
 	box-shadow: 10px 10px #42454d;
 	background-color: white;
 	border: solid 2px #42454d;
-	width: 70%;
-	margin: 0 auto 40px auto;
 	padding: 30px;
+	margin: 0 auto 40px auto;
+	width: 90%;
+
+	@media (min-width: 768px) {
+		max-width: 70%;
+	}
 `;
 
 const H1Styled = styled.h1`

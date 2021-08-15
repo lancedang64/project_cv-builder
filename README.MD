@@ -15,6 +15,7 @@ Hi, in this project I built a CV builder
 
 - Problem Solving
 
+  - Mobile CSS support
   - Organizing folders and files
   - Structuring object
   - Designing and planning logic

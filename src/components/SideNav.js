@@ -11,10 +11,20 @@ import DocumentCV from './DocumentCV/DocumentCV';
 const MySwal = withReactContent(Swal);
 
 const SideNavStyled = styled.div`
-	width: 250px;
+	position: initial;
 	background-color: #111;
-	overflow-x: hidden;
-	padding-top: 150px;
+	display: flex;
+	flex-wrap: wrap;
+
+	@media (min-width: 768px) {
+		position: fixed;
+		flex-direction: column;
+		left: 0;
+		height: 100%;
+		max-width: 250px;
+		overflow-x: hidden;
+		padding-top: 150px;
+	}
 `;
 
 const SideNavSpan = styled.span`

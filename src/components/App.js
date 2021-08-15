@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
+import styled from 'styled-components';
 
 import '../styles/App.css';
 import FormContainer from './form-mode/FormContainer/';
@@ -10,6 +11,16 @@ import FormCV from './form-mode/FormCV/';
 import { PDFViewer } from '@react-pdf/renderer';
 import DocumentCV from './DocumentCV/DocumentCV';
 import { getLocalStorageData } from './form-mode/FormCV/utils';
+
+const AppContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 768px) {
+		padding: 0 0 0 250px;
+		flex-direction: row;
+	}
+`;
 
 export const defaultData = {
 	fullName: '',
@@ -28,7 +39,7 @@ function App() {
 	);
 
 	return (
-		<div className='App'>
+		<AppContainer>
 			<SideNav
 				isEditMode={isEditMode}
 				setEditMode={setEditMode}
@@ -44,7 +55,7 @@ function App() {
 					<DocumentCV personData={personData} />
 				</PDFViewer>
 			)}
-		</div>
+		</AppContainer>
 	);
 }
 

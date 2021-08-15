@@ -2,9 +2,12 @@ import React from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import styled from 'styled-components';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 
 import templateData from '../templateData';
 import { defaultData } from './App';
+import DocumentCV from './DocumentCV/DocumentCV';
+
 const MySwal = withReactContent(Swal);
 
 const SideNavStyled = styled.div`
@@ -49,11 +52,14 @@ function SideNav(props) {
 				{props.isEditMode ? 'Preview' : 'Edit'}
 			</SideNavSpan>
 
-			{props.isEditMode ? null : (
-				<SideNavSpan onClick={() => console.log('download PDF')}>
-					Download PDF
-				</SideNavSpan>
-			)}
+			<SideNavSpan>
+				<PDFDownloadLink
+					document={<DocumentCV personData={props.personData} />}
+					fileName={`${props.personData.fullName}-CV.pdf`}
+				>
+					{({ loading }) => (loading ? 'Loading document...' : 'Download PDF')}
+				</PDFDownloadLink>
+			</SideNavSpan>
 
 			{props.isEditMode ? (
 				<SideNavSpan onClick={() => handleReset('fillWithTemplate')}>

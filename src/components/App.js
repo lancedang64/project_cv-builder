@@ -4,10 +4,11 @@ import 'antd/dist/antd.css';
 import '../styles/App.css';
 import FormContainer from './form-mode/FormContainer/';
 import SideNav from './SideNav';
-import PreviewContainer from './PreviewMode/PreviewContainer';
 import { workExperienceTemplate } from './form-mode/FormCV/components/fields-group/WorkExperienceFields';
 import { educationTemplate } from './form-mode/FormCV/components/fields-group/EducationFields';
 import FormCV from './form-mode/FormCV/';
+import { PDFViewer } from '@react-pdf/renderer';
+import DocumentCV from './DocumentCV/DocumentCV';
 
 export const defaultData = {
 	fullName: '',
@@ -28,6 +29,7 @@ function App() {
 			<SideNav
 				isEditMode={isEditMode}
 				setEditMode={setEditMode}
+				personData={personData}
 				setPersonData={setPersonData}
 			/>
 			{isEditMode ? (
@@ -35,7 +37,9 @@ function App() {
 					<FormCV defaultData={personData} setPersonData={setPersonData} />
 				</FormContainer>
 			) : (
-				<PreviewContainer personData={personData} />
+				<PDFViewer>
+					<DocumentCV personData={personData} />
+				</PDFViewer>
 			)}
 		</div>
 	);

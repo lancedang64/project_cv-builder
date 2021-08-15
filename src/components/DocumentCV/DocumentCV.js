@@ -1,10 +1,9 @@
 import React from 'react';
 import { Page, Text, View, Document } from '@react-pdf/renderer';
-import { PDFViewer } from '@react-pdf/renderer';
 import styles from '../../styles/PDFStyles';
 
 // Create Document Component
-function MyDocument(props) {
+function DocumentCV(props) {
 	const {
 		fullName,
 		jobTitle,
@@ -63,36 +62,34 @@ function MyDocument(props) {
 	));
 
 	return (
-		<PDFViewer>
-			<Document>
-				<Page size='A4' style={styles.page}>
-					<View style={styles.headerSection}>
-						<View>
-							<Text style={styles.fullName}>{fullName}</Text>
-							<Text style={styles.jobTitle}>{jobTitle}</Text>
-						</View>
-						<View style={styles.contacts}>{contactNodes}</View>
+		<Document>
+			<Page size='A4' style={styles.page}>
+				<View style={styles.headerSection}>
+					<View>
+						<Text style={styles.fullName}>{fullName}</Text>
+						<Text style={styles.jobTitle}>{jobTitle}</Text>
 					</View>
-					<View style={styles.section}>
-						<Text style={styles.heading}>Profile</Text>
-						<Text>{profile}</Text>
-					</View>
-					<View style={styles.section}>
-						<Text style={styles.heading}>Skills</Text>
-						{skillNodes}
-					</View>
-					<View style={[styles.section, { marginBottom: 10 }]}>
-						<Text style={styles.heading}>Work Experience</Text>
-						{workExperienceNodes}
-					</View>
-					<View style={styles.section}>
-						<Text style={styles.heading}>Education</Text>
-						{educationNodes}
-					</View>
-				</Page>
-			</Document>
-		</PDFViewer>
+					<View style={styles.contacts}>{contactNodes}</View>
+				</View>
+				<View style={styles.section}>
+					<Text style={styles.heading}>Profile</Text>
+					<Text>{profile}</Text>
+				</View>
+				<View style={styles.section}>
+					<Text style={styles.heading}>Skills</Text>
+					{skillNodes}
+				</View>
+				<View style={[styles.section, { marginBottom: 10 }]}>
+					<Text style={styles.heading}>Work Experience</Text>
+					{workExperienceNodes}
+				</View>
+				<View style={styles.section}>
+					<Text style={styles.heading}>Education</Text>
+					{educationNodes}
+				</View>
+			</Page>
+		</Document>
 	);
 }
 
-export default MyDocument;
+export default DocumentCV;

@@ -23,6 +23,9 @@ export default StyleSheet.create({
 		position: 'absolute',
 		textAlign: 'right',
 	},
+	contact: {
+		marginBottom: '5',
+	},
 	headerSection: {
 		marginBottom: '40',
 	},
@@ -34,9 +37,6 @@ export default StyleSheet.create({
 		fontSize: '15pt',
 		marginBottom: '5',
 		color: '#146699',
-	},
-	contact: {
-		marginBottom: '5',
 	},
 	skill: {
 		marginBottom: '5',

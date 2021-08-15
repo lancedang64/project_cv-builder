@@ -10,7 +10,11 @@ export const SectionStyled = styled.div`
 	margin: 0 auto 40px auto;
 	width: 90%;
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
+		max-width: 100%;
+	}
+
+	@media (min-width: 1441px) {
 		max-width: 70%;
 	}
 `;

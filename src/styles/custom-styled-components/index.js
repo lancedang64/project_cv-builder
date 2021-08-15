@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const DoubleRowContainerDiv = styled.div`
-	@media (min-width: 1024px) {
+	@media (min-width: 769px) {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 0 50px;

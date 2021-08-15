@@ -11,14 +11,16 @@ import FormCV from './form-mode/FormCV/';
 import { PDFViewer } from '@react-pdf/renderer';
 import DocumentCV from './DocumentCV/DocumentCV';
 import { getLocalStorageData } from './form-mode/FormCV/utils';
+import Footer from './common/footer';
 
 const AppContainer = styled.div`
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 
 	@media (min-width: 768px) {
-		padding: 0 0 0 250px;
-		flex-direction: row;
+		padding: 0 0 0 230px;
+		flex-direction: column;
 	}
 `;
 
@@ -55,6 +57,7 @@ function App() {
 					<DocumentCV personData={personData} />
 				</PDFViewer>
 			)}
+			<Footer />
 		</AppContainer>
 	);
 }

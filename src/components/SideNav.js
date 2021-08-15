@@ -50,6 +50,25 @@ function SideNav(props) {
 		props.setEditMode(prev => !prev);
 	};
 
+	const handleClearLocalStorage = () => {
+		localStorage.clear();
+		MySwal.fire({
+			icon: 'warning',
+			title: 'Are you sure?',
+			html: 'Your saved progress will be lost when you close the tab!',
+			showCancelButton: true,
+			confirmButtonText: `Ok, I am sure`,
+		}).then(result => {
+			if (result.isConfirmed)
+				MySwal.fire({
+					icon: 'success',
+					title: 'localStorage is cleared!',
+					showConfirmButton: false,
+					timer: 1500,
+				});
+		});
+	};
+
 	return (
 		<SideNavStyled>
 			<SideNavSpan onClick={handleMode}>
@@ -76,6 +95,10 @@ function SideNav(props) {
 					Reset form
 				</SideNavSpan>
 			) : null}
+
+			<SideNavSpan onClick={handleClearLocalStorage}>
+				Clear localStorage
+			</SideNavSpan>
 		</SideNavStyled>
 	);
 }

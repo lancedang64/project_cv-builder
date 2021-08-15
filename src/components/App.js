@@ -9,6 +9,7 @@ import { educationTemplate } from './form-mode/FormCV/components/fields-group/Ed
 import FormCV from './form-mode/FormCV/';
 import { PDFViewer } from '@react-pdf/renderer';
 import DocumentCV from './DocumentCV/DocumentCV';
+import { getLocalStorageData } from './form-mode/FormCV/utils';
 
 export const defaultData = {
 	fullName: '',
@@ -22,7 +23,9 @@ export const defaultData = {
 
 function App() {
 	const [isEditMode, setEditMode] = useState(true);
-	const [personData, setPersonData] = useState(defaultData);
+	const [personData, setPersonData] = useState(
+		getLocalStorageData() || defaultData
+	);
 
 	return (
 		<div className='App'>

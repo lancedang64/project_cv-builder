@@ -10,6 +10,7 @@ import SkillListFields from './components/fields-group/SkillListFields';
 import WorkExperienceFields from './components/fields-group/WorkExperienceFields';
 import EducationFields from './components/fields-group/EducationFields';
 import Section from './components/reusable/Section';
+import { setLocalStorageData } from './utils';
 
 const MySwal = withReactContent(Swal);
 
@@ -34,12 +35,16 @@ function FormCV(props) {
 
 	const handleSubmit = () => {
 		props.setPersonData(getValues());
+		setLocalStorageData(getValues());
 		MySwal.fire({
 			icon: 'success',
 			title: 'Data is saved! You can preview or/and download your CV',
 			showConfirmButton: true,
 		});
 	};
+
+	if (typeof Storage == 'undefined')
+		alert('Sorry, your browser does not support Web Storage...');
 
 	return (
 		<FormStyled>

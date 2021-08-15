@@ -14,15 +14,17 @@ function DocumentCV(props) {
 		education,
 	} = props.personData;
 
-	const contactNodes = contacts.map(contact => {
+	const contactNodes = contacts.map((contact, index) => {
+		if (contact === '') return null;
 		return (
-			<Text key={contact} style={styles.contact}>
+			<Text key={index} style={styles.contact}>
 				{contact}
 			</Text>
 		);
 	});
 
 	const skillNodes = skills.map((skill, index) => {
+		if (skill === '') return null;
 		return (
 			<Text key={index} style={styles.skill}>
 				- {skill}
@@ -31,11 +33,14 @@ function DocumentCV(props) {
 	});
 
 	const workExperienceNodes = workExperience.map((exp, index) => {
-		const descriptionNodes = exp.description.map((task, index) => (
-			<Text key={index} style={styles.task}>
-				- {task}
-			</Text>
-		));
+		const descriptionNodes = exp.description.map((task, index) => {
+			if (task === '') return null;
+			return (
+				<Text key={index} style={styles.task}>
+					- {task}
+				</Text>
+			);
+		});
 
 		return (
 			<View key={index} style={styles.workExperience}>

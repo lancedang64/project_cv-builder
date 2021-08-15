@@ -46,9 +46,13 @@ function SideNav(props) {
 		});
 	};
 
+	const handleMode = () => {
+		props.setEditMode(prev => !prev);
+	};
+
 	return (
 		<SideNavStyled>
-			<SideNavSpan onClick={() => props.setEditMode(prev => !prev)}>
+			<SideNavSpan onClick={handleMode}>
 				{props.isEditMode ? 'Preview' : 'Edit'}
 			</SideNavSpan>
 

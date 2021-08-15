@@ -2,13 +2,16 @@ import React, { useEffect } from 'react';
 import { Form, Button } from 'antd';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 import GeneralInfoFields from './components/fields-group/GeneralInfoFields';
 import SkillListFields from './components/fields-group/SkillListFields';
 import WorkExperienceFields from './components/fields-group/WorkExperienceFields';
 import EducationFields from './components/fields-group/EducationFields';
 import Section from './components/reusable/Section';
-import templateData from '../../../templateData';
+
+const MySwal = withReactContent(Swal);
 
 const FormStyled = styled(Form)`
 	display: flex;
@@ -16,12 +19,12 @@ const FormStyled = styled(Form)`
 	align-items: center;
 `;
 
-const SubmitButton = styled(Button)`
+export const SubmitButton = styled(Button)`
 	width: 50%;
 `;
 
 function FormCV(props) {
-	const { handleSubmit, control, getValues, reset } = useForm({
+	const { control, getValues, reset } = useForm({
 		defaultValues: props.defaultData,
 	});
 
@@ -29,30 +32,46 @@ function FormCV(props) {
 		reset(props.defaultData);
 	}, [props.defaultData, reset]);
 
-	const onSubmit = data => console.log(data);
+	const handleSubmit = () => {
+		props.setPersonData(getValues());
+		MySwal.fire({
+			icon: 'success',
+			title: 'Data is saved! You can preview or/and download your CV',
+			showConfirmButton: true,
+		});
+	};
 
 	return (
-		<FormStyled onSubmit={handleSubmit(onSubmit)}>
-			<Section title='General Information'>
+		<FormStyled>
+			<Section title='General Information' handleSubmit={handleSubmit}>
 				<GeneralInfoFields formControl={control} values={getValues()} />
 			</Section>
 
-			<Section title='Skill List' subtitle='(recommended: minimum 3)'>
+			<Section
+				title='Skill List'
+				subtitle='(recommended: minimum 3)'
+				handleSubmit={handleSubmit}
+			>
 				<SkillListFields formControl={control} />
 			</Section>
 
-			<Section title='Work Experience' subtitle='(recommended: minimum 2)'>
+			<Section
+				title='Work Experience'
+				subtitle='(recommended: minimum 2)'
+				handleSubmit={handleSubmit}
+			>
 				<WorkExperienceFields formControl={control} />
 			</Section>
 
-			<Section title='Education' subtitle='(recommended: minimum 1)'>
+			<Section
+				title='Education'
+				subtitle='(recommended: minimum 1)'
+				handleSubmit={handleSubmit}
+			>
 				<EducationFields formControl={control} />
 			</Section>
 
-			<SubmitButton
-				type='primary'
-				onClick={() => console.log(JSON.stringify(getValues(), null, 2))}
-			>
+			<SubmitButton type='primary' onClick={handleSubmit}>
 				Submit
 			</SubmitButton>
 		</FormStyled>

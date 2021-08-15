@@ -1,3 +1,4 @@
+import { Button } from 'antd';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -15,12 +16,19 @@ const H1Styled = styled.h1`
 	margin-right: 20px;
 `;
 
-export default function Section({ title, subtitle, children }) {
+const SaveChangesButton = styled(Button)`
+	margin-top: 20px;
+`;
+
+export default function Section({ title, subtitle, handleSubmit, children }) {
 	return (
 		<SectionStyled>
 			<H1Styled>{title}</H1Styled>
 			<span>{subtitle}</span>
 			{children}
+			<SaveChangesButton type='primary' onClick={handleSubmit}>
+				Save Changes
+			</SaveChangesButton>
 		</SectionStyled>
 	);
 }

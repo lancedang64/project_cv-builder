@@ -1,5 +1,6 @@
 import React from 'react';
 import { Controller } from 'react-hook-form';
+import styled from 'styled-components';
 import {
 	DoubleRowContainerDiv,
 	FieldsGroupCardDiv,
@@ -12,14 +13,14 @@ export default function Education({ formControl, index, action }) {
 		<FieldsGroupCardDiv>
 			<TitleWithActionDiv>
 				<h3>Degree #{index + 1}:</h3>
-				<Controller
-					name={`education[${index}].degree`}
-					control={formControl}
-					defaultValue={''}
-					render={({ field }) => <TextInput field={field} />}
-				/>
 				{action}
 			</TitleWithActionDiv>
+			<Controller
+				name={`education[${index}].degree`}
+				control={formControl}
+				defaultValue={''}
+				render={({ field }) => <TextInput label='Degree' field={field} />}
+			/>
 
 			<DoubleRowContainerDiv>
 				<Controller

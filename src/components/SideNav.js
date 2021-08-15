@@ -1,23 +1,23 @@
 import React from 'react';
+import templateData from '../templateData';
+import { defaultData } from './App';
 
 function SideNav(props) {
-  function handleClick(event) {
-    const name = event.target.innerHTML;
-    props.functions[name]();
-  }
+	return (
+		<div className='SideNav'>
+			<span onClick={() => props.setEditMode(prev => !prev)}>
+				{props.isEditMode ? 'Preview' : 'Edit'}
+			</span>
 
-  const funcArr = [];
-  for (const funcName in props.functions) funcArr.push(funcName);
+			<span onClick={() => console.log('download PDF')}>Download PDF</span>
 
-  const sideNavComponents = funcArr.map((funcName) => {
-    return (
-      <span key={funcName} onClick={handleClick}>
-        {funcName}
-      </span>
-    );
-  });
+			<span onClick={() => props.setPersonData(templateData)}>
+				Fill with template
+			</span>
 
-  return <div className="SideNav">{sideNavComponents}</div>;
+			<span onClick={() => props.setPersonData(defaultData)}>Reset form</span>
+		</div>
+	);
 }
 
 export default SideNav;

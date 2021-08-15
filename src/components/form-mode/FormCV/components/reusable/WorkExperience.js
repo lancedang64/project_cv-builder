@@ -1,10 +1,8 @@
 import React from 'react';
 import { Controller, useFieldArray } from 'react-hook-form';
 import { Button } from 'antd';
-import styled from 'styled-components';
 
 import TextInput from './TextInput';
-import DatePickerField from './DatePickerField';
 import {
 	DoubleRowContainerDiv,
 	FieldsGroupCardDiv,
@@ -45,17 +43,13 @@ export default function WorkExperience({ formControl, index, action }) {
 					name={`workExperience[${index}].startDate`}
 					control={formControl}
 					defaultValue={''}
-					render={({ field }) => (
-						<DatePickerField label='Start date' field={field} />
-					)}
+					render={({ field }) => <TextInput label='Start date' field={field} />}
 				/>
 				<Controller
 					name={`workExperience[${index}].endDate`}
 					control={formControl}
 					defaultValue={''}
-					render={({ field }) => (
-						<DatePickerField label='End date' field={field} />
-					)}
+					render={({ field }) => <TextInput label='End date' field={field} />}
 				/>
 			</DoubleRowContainerDiv>
 

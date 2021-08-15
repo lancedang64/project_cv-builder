@@ -1,4 +1,4 @@
-const TEMPLATE = {
+const templateData = {
 	fullName: 'John Doe',
 	jobTitle: 'Software Developer',
 	contacts: [
@@ -46,9 +46,9 @@ const TEMPLATE = {
 		{
 			degree: 'Master of Science in Software Development',
 			school: 'Boston University',
-			yearOfGradution: '2002',
+			yearOfGraduation: '2002',
 		},
 	],
 };
 
-export default TEMPLATE;
+export default templateData;

@@ -1,54 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Button } from 'antd';
 import { useForm } from 'react-hook-form';
+import styled from 'styled-components';
+
 import GeneralInfoFields from './components/fields-group/GeneralInfoFields';
 import SkillListFields from './components/fields-group/SkillListFields';
-import WorkExperienceFields, {
-	workExperienceTemplate,
-} from './components/fields-group/WorkExperienceFields';
-import EducationFields, {
-	educationTemplate,
-} from './components/fields-group/EducationFields';
+import WorkExperienceFields from './components/fields-group/WorkExperienceFields';
+import EducationFields from './components/fields-group/EducationFields';
 import Section from './components/reusable/Section';
+import templateData from '../../../templateData';
 
-export const defaultValues = {
-	fullName: '',
-	jobTitle: '',
-	contacts: ['', '', '', '', ''],
-	skills: ['', '', ''],
-	profile: '',
-	workExperience: [workExperienceTemplate],
-	education: [educationTemplate],
-};
+const FormStyled = styled(Form)`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
 
-const formItemLayout = {
-	layout: 'horizontal',
-	labelCol: {
-		span: 2,
-	},
-	wrapperCol: {
-		span: 14,
-	},
-};
+const SubmitButton = styled(Button)`
+	width: 50%;
+`;
 
-const buttonItemLayout = {
-	wrapperCol: {
-		span: 14,
-		offset: 2,
-	},
-};
-
-const FormCV = props => {
-	const { handleSubmit, control, register, getValues } = useForm({
-		defaultValues: defaultValues,
+function FormCV(props) {
+	const { handleSubmit, control, getValues, reset } = useForm({
+		defaultValues: props.defaultData,
 	});
+
+	useEffect(() => {
+		reset(props.defaultData);
+	}, [props.defaultData, reset]);
 
 	const onSubmit = data => console.log(data);
 
 	return (
-		<Form onSubmit={handleSubmit(onSubmit)} {...formItemLayout}>
+		<FormStyled onSubmit={handleSubmit(onSubmit)}>
 			<Section title='General Information'>
-				<GeneralInfoFields formControl={control} />
+				<GeneralInfoFields formControl={control} values={getValues()} />
 			</Section>
 
 			<Section title='Skill List' subtitle='(recommended: minimum 3)'>
@@ -63,14 +49,14 @@ const FormCV = props => {
 				<EducationFields formControl={control} />
 			</Section>
 
-			<Button
+			<SubmitButton
 				type='primary'
 				onClick={() => console.log(JSON.stringify(getValues(), null, 2))}
 			>
 				Submit
-			</Button>
-		</Form>
+			</SubmitButton>
+		</FormStyled>
 	);
-};
+}
 
 export default FormCV;

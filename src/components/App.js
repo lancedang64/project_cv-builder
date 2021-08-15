@@ -5,31 +5,34 @@ import '../styles/App.css';
 import FormContainer from './form-mode/FormContainer/';
 import SideNav from './SideNav';
 import PreviewContainer from './PreviewMode/PreviewContainer';
-import TEMPLATE from '../TEMPLATE';
+import { workExperienceTemplate } from './form-mode/FormCV/components/fields-group/WorkExperienceFields';
+import { educationTemplate } from './form-mode/FormCV/components/fields-group/EducationFields';
 import FormCV from './form-mode/FormCV/';
+
+export const defaultData = {
+	fullName: '',
+	jobTitle: '',
+	contacts: ['', '', '', '', ''],
+	skills: ['', '', ''],
+	profile: '',
+	workExperience: [workExperienceTemplate],
+	education: [educationTemplate],
+};
 
 function App() {
 	const [isEditMode, setEditMode] = useState(true);
-	const [personData, setPersonData] = useState(TEMPLATE);
-
-	const sideNavFunctions = {
-		Preview: function togglePreviewMode() {
-			setEditMode(prevState => !prevState);
-		},
-		'Download PDF': function downloadPDF() {
-			console.log('download PDF');
-		},
-		'Fill with template': function fillWithTemplate() {
-			console.log('fill with template');
-		},
-	};
+	const [personData, setPersonData] = useState(defaultData);
 
 	return (
 		<div className='App'>
-			<SideNav functions={sideNavFunctions} />
+			<SideNav
+				isEditMode={isEditMode}
+				setEditMode={setEditMode}
+				setPersonData={setPersonData}
+			/>
 			{isEditMode ? (
 				<FormContainer>
-					<FormCV />
+					<FormCV defaultData={personData} setPersonData={setPersonData} />
 				</FormContainer>
 			) : (
 				<PreviewContainer personData={personData} />

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Controller } from 'react-hook-form';
-import { defaultValues } from '../../index';
 
 import TextInput from '../reusable/TextInput';
 import { DoubleRowContainerDiv } from '../../../../../styles/custom-styled-components';
 
-export default function GeneralInfoFields({ formControl }) {
+export default function GeneralInfoFields({ formControl, values }) {
 	return (
 		<div>
 			<DoubleRowContainerDiv>
@@ -23,7 +22,7 @@ export default function GeneralInfoFields({ formControl }) {
 
 			<h3>Contacts (recommended: minimum 3)</h3>
 			<DoubleRowContainerDiv>
-				{defaultValues.contacts.map((field, index) => (
+				{values.contacts.map((field, index) => (
 					<Controller
 						key={index}
 						name={`contacts[${index}]`}
@@ -40,7 +39,7 @@ export default function GeneralInfoFields({ formControl }) {
 				control={formControl}
 				render={({ field }) => (
 					<TextInput
-						label='Profile (recommended: minimum 50-80 words)'
+						label='Profile (recommended: minimum 300-400 words)'
 						field={field}
 						inputType='textArea'
 					/>

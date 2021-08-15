@@ -1,5 +1,5 @@
 import React from 'react';
-import { Controller, useFieldArray } from 'react-hook-form';
+import { useFieldArray } from 'react-hook-form';
 import { Button } from 'antd';
 import styled from 'styled-components';
 
@@ -16,12 +16,10 @@ export const educationTemplate = {
 };
 
 export default function EducationFields({ formControl }) {
-	const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
-		{
-			control: formControl,
-			name: 'education',
-		}
-	);
+	const { fields, append, remove } = useFieldArray({
+		control: formControl,
+		name: 'education',
+	});
 	return (
 		<>
 			<div>

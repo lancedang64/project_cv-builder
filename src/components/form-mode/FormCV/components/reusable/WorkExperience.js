@@ -10,12 +10,10 @@ import {
 } from '../../../../../styles/custom-styled-components';
 
 export default function WorkExperience({ formControl, index, action }) {
-	const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
-		{
-			control: formControl,
-			name: `workExperience[${index}].description`,
-		}
-	);
+	const { fields, append, remove } = useFieldArray({
+		control: formControl,
+		name: `workExperience[${index}].description`,
+	});
 
 	return (
 		<FieldsGroupCardDiv>
